@@ -1,14 +1,13 @@
+const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 
-const DB = 'mongodb+srv://moxiehawk:@cluster0.yckuc.mongodb.net/moxiehawk-assignment?retryWrites=true&w=majority'
+dotenv.config({path: './config.env'});
+require('./db/conn');
 
-mongoose.connect(DB, {
-    useNewUrlParser: true,
-}).then(() =>{
-    console.log('connection successful');
-}).catch((err) => console.log('no connection'));
+
+const PORT = process.env.PORT;
 
 
 const middleware = (req, res, next) => {
@@ -29,8 +28,8 @@ app.get('/signin', (req, res) => {
     res.send('Hello from signin');
 })
 
-app.listen(3000, () => {
-    console.log('server is running at port no 3000')
+app.listen(PORT, () => {
+    console.log(`server is running at port no ${PORT}`)
 })
 
 console.log("testing");

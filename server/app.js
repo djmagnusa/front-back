@@ -6,6 +6,12 @@ const app = express();
 dotenv.config({path: './config.env'});
 require('./db/conn');
 
+app.use(express.json());
+
+
+//linking router files to make our route
+app.use(require('./router/auth'));
+
 
 const PORT = process.env.PORT;
 
@@ -16,9 +22,9 @@ const middleware = (req, res, next) => {
 }
 
 
-app.get('/', (req, res) => {
-    res.send('Hello world from server');
-});
+// app.get('/', (req, res) => {
+//     res.send('Hello world from server');
+// });
 
 app.get('/signup', (req, res) => {
     res.send('Response from signup');
@@ -29,7 +35,5 @@ app.get('/signin', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`server is running at port no ${PORT}`)
+    console.log(`server is running at port ${PORT}`)
 })
-
-console.log("testing");

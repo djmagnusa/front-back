@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const authenticate = require("../middleware/authenticate");
+
 
 require('../db/conn');
 const User = require("../model/userSchema")
@@ -38,6 +40,7 @@ router.get('/', (req, res) => {
 //     //res.json({ message: req.body });
 //     // res.send("this is register page");
 // })
+
 
 router.post('/register', async (req, res) => {
 
@@ -77,6 +80,12 @@ router.post('/register', async (req, res) => {
 
 })
 
+router.get('/getdata', authenticate, (req,res) => {
+    console.log('This is getData');
+    res.send(req.rootUser)
+})
+
+
 //login route
 
 router.post('/signin', async (req, res) => {
@@ -102,6 +111,11 @@ router.post('/signin', async (req, res) => {
 
             console.log(token);
 
+            res.cookie("jwtoken", token, {
+                expires: new Date(Date.now() + 25892000000), //expire cookie in 30 days
+                httpOnly: true
+            });
+
             if(!isMatch) {
                 res.status(400).json({ error: "Invalid credentials"});
             } else{
@@ -115,6 +129,14 @@ router.post('/signin', async (req, res) => {
         console.log(err);
     }
 
+})
+
+//Logout page
+
+router.get('/logout', (req, res) => {
+    console.log("Hello logout");
+    res.clearCookie('jwtoken', {path: '/'});
+    res.status(200).send('User logout');
 })
 
 

@@ -18,14 +18,6 @@ const Navbar = () => {
                     </li>
 
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/about">About</NavLink>
-                    </li>
-
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/contact">Contact</NavLink>
-                    </li>
-
-                    <li className="nav-item">
                         <NavLink className="nav-link" to="/logout">Logout</NavLink>
                     </li>
 
@@ -36,14 +28,6 @@ const Navbar = () => {
                 <>
                     <li className="nav-item active">
                         <NavLink className="nav-link" to="/">Home <span className="sr-only"></span></NavLink>
-                    </li>
-
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/about">About</NavLink>
-                    </li>
-
-                    <li className="nav-item">
-                        <NavLink className="nav-link" to="/contact">Contact</NavLink>
                     </li>
 
                     <li className="nav-item">
@@ -63,7 +47,7 @@ const Navbar = () => {
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <NavLink className="navbar-brand" to="#">
-                    <i className="fa fa-id-card" style={{paddingLeft: "10px", fontSize: "27px", color: "darkblue"}}></i><span className="logo">jobify.</span>
+                    <i className="fa fa-tasks" style={{paddingLeft: "10px", fontSize: "27px"}}></i><span className="logo">MoxieHawk Assignment.</span>
                 </NavLink>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>

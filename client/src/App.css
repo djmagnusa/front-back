@@ -1,38 +1,263 @@
-.App {
+/* register css */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.bg-light {
+  background-color: #ffff !important;
+}
+body {
+color: #fff;
+background: #63738a;
+font-family: 'Roboto', sans-serif;
+}
+
+.logo, fa-id-card{
+    color: black;
+    padding-left: 20px;
+    font-family: 'Lobster', cursive;
+    font-size: 28px;
+}
+
+.blue-color{
+  color: blue;
+}
+
+.form-control {
+height: 40px;
+box-shadow: none;
+color: #969fa4;
+}
+.form-control:focus {
+border-color: #5cb85c;
+}
+.form-control, .btn {        
+border-radius: 3px;
+}
+.signup-form {
+width: 450px;
+margin: 0 auto;
+padding: 30px 0;
+  font-size: 15px;
+}
+.signup-form h2 {
+color: #636363;
+margin: 0 0 15px;
+position: relative;
+text-align: center;
+}
+/* .signup-form h2:before, .signup-form h2:after {
+content: "";
+height: 2px;
+width: 30%;
+background: #d4d4d4;
+position: absolute;
+top: 50%;
+z-index: 2;
+}	 */
+.signup-form h2:before {
+left: 0;
+}
+.signup-form h2:after {
+right: 0;
+}
+.signup-form {
+color: #999;
+margin-bottom: 30px;
+text-align: center;
+}
+.signup-form form {
+color: #999;
+border-radius: 3px;
+margin-bottom: 15px;
+background: #f2f3f7;
+box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+padding: 30px;
+}
+.signup-form .form-group {
+margin-bottom: 20px;
+}
+.signup-form input[type="checkbox"] {
+margin-top: 3px;
+}
+.signup-form .btn {        
+font-size: 16px;
+font-weight: bold;		
+min-width: 140px;
+outline: none !important;
+}
+.signup-form .row div:first-child {
+padding-right: 10px;
+}
+.signup-form .row div:last-child {
+padding-left: 10px;
+}    	
+.signup-form a {
+color: rgb(88, 86, 86);
+text-decoration: underline;
+}
+.signup-form a:hover {
+text-decoration: none;
+}
+.signup-form form a {
+color: #5cb85c;
+text-decoration: none;
+}	
+.signup-form form a:hover {
+text-decoration: underline;
+} 
+/* login css */
+
+.login-form {
+  width: 400px;
+  margin: 30px auto;
+}
+.login-form form {        
+  margin-bottom: 15px;
+  background: #f7f7f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+
+
+.login-form h2 {
+  margin: 0 0 15px;
+}
+
+.login-form .form-control{
+  margin-bottom: 20px;
+}
+
+.form-control, .login-btn {
+  border-radius: 2px;
+}
+.input-group-prepend .fa {
+  font-size: 26px;
+}
+.login-btn {
+  font-size: 15px;
+  font-weight: bold;
+  min-height: 40px;
+}
+/* .or-seperator {
+  margin-top: 20px;
   text-align: center;
+  border-top: 1px solid #ccc;
 }
+.or-seperator i {
+  padding: 0 10px;
+  background: #f7f7f7;
+  position: relative;
+  top: -15px;
+  z-index: 1;
+}    */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Home css */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home-page{
+  height: calc(100vh - 68px);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  align-items: center;
+  background: url("./images/background.jpg");
+  background-size: cover;
 }
 
-.App-link {
-  color: #61dafb;
+.home-div{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* Not Found - 404 page */
+
+#notfound{
+  position: relative;
+  height: calc(100vh - 68px);
 }
+
+#notfound .notfound{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%); 
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.notfound {
+  max-width: 920px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.notfound .notfound-404 {
+  position: absolute;
+  height: 100px;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translatex(-50%);
+  transform: translate(-50%);
+  z-index: -1;
+
+}
+
+.notfound .notfound-404 h1{
+  font-family: "Maven Pro", sans-serif;
+  color: #ececec;
+  font-weight: 900;
+  font-size: 276px;
+  margin: 0px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.notfound h2{
+  font-family: "Maven Pro", sans-serif;
+  font-size: 46px;
+  color: #000;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0px;
+}
+
+.notfound p {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.notfound a{
+  font-family: "Maven Pro", sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #189cf0;
+  display: inline-block;
+  padding: 16px 38px;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  color: #fff;
+  font-weight: 400;
+  transition: 0.2s all;
+  -webkit-transition: 0.2s all;
+  transform: 0.2s all;
+}
+
+.notfound a:hover{
+  background-color: #fff;
+  border-color: #189cf0;
+  color: #189cf0;
+}
+
